@@ -493,7 +493,7 @@
         currentAction,
         resizeTimer,
         time,
-        maxShapeSize = 3,
+        maxShapeSize = 5,
         firstAction = true,
         sequence = [],
         cmd = '#';
@@ -874,7 +874,7 @@
 
 
     S.ShapeBuilder = (function () {
-      var gap = 10,
+      var gap = 12,
         shapeCanvas = document.createElement('canvas'),
         shapeContext = shapeCanvas.getContext('2d'),
         fontSize = 700,
