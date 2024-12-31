@@ -20,10 +20,57 @@
       overflow: hidden;
       background: #000;
     }
+    #demo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: -20px;
+      font-size: 50px;
+      color: #ec4a09;
+      block-size: 10;
+      /* animation: anim 1.5s ease-in-out infinite;
+        -webkit-animation: anim 1.5s ease-in-out infinite;
+        -o-animation: anim 1.5s ease-in-out infinite;
+        -moz-animation: anim 1.5s ease-in-out infinite; */
+    }
+    #typing {
+            font-family: 'Courier New', Courier, monospace; /* 使用等宽字体 */
+            white-space: pre; /* 保持空格和换行 */
+            border-right: 2px solid black; /* 光标样式 */
+            width: fit-content; /* 自适应宽度 */
+            overflow: hidden; /* 隐藏溢出内容 */
+        }
+        
+        .blink {
+            animation: blink-animation 1s steps(1) infinite;
+        }
+
+        @keyframes blink-animation {
+            50% { border-color: transparent; }
+        }
   </style>
 
 
-
+<div id="demo" style="display:none"><strong>
+    <strong><strong>
+        <div id="typing" class="blink"><p>新年新气象
+            <p>在新的一年里要更加努力!<p>祝你有更大的收获<p>加油！！！        <br><br><br><p><center>----CODE老赵"
+    </div></div>
+    <!-- <script>
+        const text = "    <p>在新的一年里要更加努力!<p>祝你有更大的收获<p>加油！！！        <br><br><br><p><center>----CODE老赵"; // 要打字的文本
+        const typingElement = document.getElementById("typing");
+        let index = 0;
+    
+        function type() {
+            if (index < text.length) {
+                typingElement.innerHTML += text[index++];
+                setTimeout(type, 300); // 设置打字速度
+            }
+        }
+    
+        type(); // 开始打字
+    </script> -->
   <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
   <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
   <div class="overlay">
@@ -827,10 +874,10 @@
 
 
     S.ShapeBuilder = (function () {
-      var gap = 13,
+      var gap = 10,
         shapeCanvas = document.createElement('canvas'),
         shapeContext = shapeCanvas.getContext('2d'),
-        fontSize = 500,
+        fontSize = 700,
         fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
 
       function fit() {
@@ -1066,6 +1113,10 @@
 
     S.init();
 
+  </script>
+  <script>
+    xx=document.getElementById("demo")  //找到元素 
+    setTimeout(function(){xx.style.display=""}, 40000);
   </script>
 
   <canvas id="c"></canvas>
